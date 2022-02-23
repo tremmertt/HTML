@@ -8,6 +8,17 @@ export default function Join() {
             <h1 className='text-6xl mr-6 text-blue-400 font-mono font-extrabold'> GET IN TOUCH </h1>
             <div className='bg-blue-400 justify-self-center rounded-lg mt-8' style={{ width:'300px' , height:'10px' }}></div>
         </div>
+        <div className='grid grid-cols-12 my-10'>
+          <div className='col-span-6 border-r-2 border-gray-500 ml-6 mt-4'>
+            <p className='text-lg font-sans font-light flex justify-start '> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+            <button className='outline outline-offset-4 outline-4 outline-blue-500 rounded-3xl my-10 p-3 font-extrabold text-xl text-blue-600 tracking-widest'> CONTACT US </button>
+          </div>
+
+          <div className='col-span-6 ml-6 mt-4'>
+            <p className='text-lg font-sans font-light flex justify-start '> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+            <button className='outline outline-offset-4 outline-4 outline-blue-500 rounded-3xl my-10 p-3 font-extrabold text-xl text-blue-600 tracking-widest'> JOIN US </button>
+          </div>
+        </div>
         <div>
             
         </div>

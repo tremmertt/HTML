@@ -10,13 +10,12 @@ import Join from '../../components/Join/Join'
 export default function Home() {
   return (
     <div className='container-fluid xl:w-full xl:h-full md:h-3/5 md:w-3/5'>
-        <Header />
+        {/* <Header /> */}
         <Carousel />
         <Intro />
         <Banner />
         <Clients />
         <Join />
-        <Footer />
     </div>
   )
 }
