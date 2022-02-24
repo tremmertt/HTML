@@ -4,124 +4,79 @@ import './ClientsService.css'
 
 export default function ClientsService() {
 
-    const settings = {
-        dots: false,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
-        cssEase: "linear",
-      };
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+    speed: 3000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+  };
+
+  function getFlagsRow() {
+
+    const flags = [
+      '../../img/country/AUS.png',
+      '../../img/country/Germany.png',
+      '../../img/country/Ukraine.png',
+      '../../img/country/Cyprus.png',
+      '../../img/country/Japan.png',
+      '../../img/country/France.png',
+      '../../img/country/UK.png',
+      '../../img/country/Colombia.png',
+      '../../img/country/Italy.png',
+      '../../img/country/Spain.png',
+      '../../img/country/Norway.png',
+      '../../img/country/China.png',
+      '../../img/country/Isareal.png',
+      '../../img/country/South-Korea.png',
+      '../../img/country/Thailand.png',
+      '../../img/country/India.png',
+      '../../img/country/Sweden.png',
+      '../../img/country/Vietnam.png',
+      '../../img/country/Canada.png',
+      '../../img/country/Singapore.png',
+      '../../img/country/US.png',
+      '../../img/country/Finland.png',
+    ]
+
+    const rows = []
+    for (const flagPath of flags) {
+      const name = flagPath.split('/')[flagPath.split('/').length - 1].replace('.png', '')
+      rows.push(
+        <li className='col-span-1 text-left py-3' key={`${name}`}>
+          <img className='mx-4 inline-block' src={require(`../../img/country/${name}.png`)} alt={flagPath} />
+          <p className='text-sm font-sans font-medium inline-block'> {name} </p>
+        </li>
+      )
+    }
+    return rows
+  }
 
   return (
     <div className='container-fluid py-16 mx-auto'>
-        <div className='grid justify-items-stretch'>
-            <h1 className='text-6xl mr-6 text-blue-400 font-mono font-extrabold'> OUR CLIENTS </h1>
-            <div className='bg-blue-400 justify-self-center rounded-lg mt-8' style={{ width:'300px' , height:'10px' }}></div>
-        </div>
-        <div className='flex container justify-center mx-8 leading-4 mt-5'>
-            <p className='text-xl font-extralight'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-        </div>
-        <div className='container mt-8'>
-            <img className='h-auto flex justify-center px-48 ml-10' src={require('../../img/glassegg-client-map.png')} alt=""/>
-        </div>
-
-        <div className='p-10'>
-            <ul className='country'>
-                <li className='list-country' >
-                    <img className='mx-4' src={require('../../img/country/AUS.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Australia </p>
-                </li>
-                <li className='list-country'>  
-                    <img className='mx-4' src={require('../../img/country/Germany.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Germany </p>
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Ukraine.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Ukraine </p>
-                </li>
-                <li className='list-country'>
-                    <img  className='mx-4' src={require('../../img/country/Cyprus.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Cyprus </p>
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Japan.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Japan </p>
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/France.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> France </p>
-                </li>
-                <li className='list-country'>
-                    <img className='mr-6' src={require('../../img/country/UK.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> UK </p>
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Colombia.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Colombia </p>
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Italy.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Italy </p>
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Spain.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Spain </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Norway.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Norway </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/China.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> China </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Isareal.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Isareal </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/South-Korea.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> South Korea </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Thailand.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Thailand </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/India.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> India </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Sweden.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Sweden </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Vietnam.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Vietnam </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Canada.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Canada </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Singapore.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Singapore </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/US.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> USA </p> 
-                </li>
-                <li className='list-country'>
-                    <img className='mx-4' src={require('../../img/country/Finland.png')} alt="" />
-                    <p className='text-sm font-sans font-medium'> Finland </p> 
-                </li>
-            </ul>
+      <div className='grid justify-items-stretch'>
+        <h1 className='text-6xl mr-6 text-blue-400 font-mono font-extrabold'> OUR CLIENTS </h1>
+        <div className='bg-blue-400 justify-self-center rounded-lg mt-8' style={{ width: '300px', height: '10px' }}></div>
+      </div>
+      <div className='flex  justify-center mx-8 leading-4 py-10'>
+        <p className='text-xl font-extralight w-2/3'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+      <div className='grid md:grid-cols-2 sm:grid-cols-2'>
+        <img className=' md:col-span-1 sm:col-span-2 h-auto px-12 py-4 flex justify-center mx-auto' src={require('../../img/glassegg-client-map.png')} alt="" />
+        <div className=' md:col-span-1 sm:col-span-2 px-12 py-4'>
+          <ul className='grid grid-cols-3'>
+            {getFlagsRow()}
+          </ul>
         </div>
 
-        <div className='mt-20'>
+      </div>
+
+
+      <div className='mt-20'>
         <Slider {...settings}>
           <div className='ml-10'>
             <img src={require('../../img/logo/ABOSO.png')} alt="" />

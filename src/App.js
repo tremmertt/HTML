@@ -10,6 +10,7 @@ import Product from './pages/Product/Product';
 import News from './pages/News/News';
 import Careers from './pages/Hiring/Careers';
 import Contact from './pages/Contact/Contact';
+import About from './pages/About/About';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/service" element={<Service />} />
           <Route path="/product" element={<Product />} />
           <Route path="/news" element={<News />} />
