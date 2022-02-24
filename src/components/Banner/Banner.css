@@ -8,10 +8,10 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  background-image: url(./next.svg);
+  /* background-image: url(./next.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-position: center;
+  background-position: center; */
   left: 25px;
   top: 100px;
   z-index: 300;
@@ -21,10 +21,10 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  background-image: url(./next.svg);
+  /* background-image: url(./next.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-position: center;
+  background-position: center; */
   right: 25px;
   top: 100px;
   z-index: 300;

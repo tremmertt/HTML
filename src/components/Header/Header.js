@@ -31,17 +31,17 @@ export default function Header() {
 
   function showHeaderNormal() {
     return (
-      <nav style={{ height: offset == 0 ? '109px' : '90px', transition: 'all 0.5s ease-in-out' }} className="px-14  flex flex-row items-center shadow-md justify-around">
+      <nav style={{ height: offset == 0 ? '80px' : '60px', transition: 'all 0.5s ease-in-out' }} className="px-14  flex flex-row items-center shadow-md justify-around">
         <Link to="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <img className=' w-auto' style={{ height: offset == 0 ? '50px' : '40px' }} src={require("../../img/blue-2.png")} alt="logo" />
         </Link>
         <ul className="md:ml-auto md:mr-auto flex flex-wrap items-center text-md font-semibold justify-center">
           <li><Link to="/" className="mr-8 hover:text-gray-900"> ABOUT </Link></li>
           <li><Link to="/service" className="mr-8 hover:text-gray-900"> SERVICE </Link></li>
-          <li><Link to="/" className="mr-8 hover:text-gray-900"> PORTFOLIO </Link></li>
-          <li><Link to="/" className="mr-8 hover:text-gray-900"> NEWS </Link></li>
-          <li><Link to="/" className="mr-8 hover:text-gray-900"> CAREERS </Link></li>
-          <li><Link to="/" className="mr-8 hover:text-gray-900"> CONTACT </Link></li>
+          <li><Link to="/product" className="mr-8 hover:text-gray-900"> PORTFOLIO </Link></li>
+          <li><Link to="/news" className="mr-8 hover:text-gray-900"> NEWS </Link></li>
+          <li><Link to="/careers" className="mr-8 hover:text-gray-900"> CAREERS </Link></li>
+          <li><Link to="/contact" className="mr-8 hover:text-gray-900"> CONTACT </Link></li>
         </ul>
         <button className="inline-flex items-center outline outline-offset-2 outline-1 outline-blue-400 border-0 py-1 px-3 focus:outline-none hover:outline-blue-900 hover:outline-2 rounded text-base mt-4 md:mt-0 " style={{ width: '100px' }}> English
           <div className='ml-2'>

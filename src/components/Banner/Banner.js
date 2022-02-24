@@ -18,13 +18,6 @@ export default function Banner() {
         loop: true,
     };
 
-    function getArrow() {
-        return (
-
-            <a>dsadsa</a>
-        )
-    }
-
     const [swiper, setSwipper] = useState(null)
     const [slide, setSlide] = useState(0);
 
@@ -42,7 +35,70 @@ export default function Banner() {
         slides.push(
             <SwiperSlide key={`slide-WRECKFEST-THQNordic.jpg`}>
                 <img src={require('../../img/WRECKFEST-THQNordic.jpg')} alt="" />
-                <p className='mt-2'> NEED FOR SPEED PAYBACK - EA </p>
+                <p className='mt-2'> WRECKFEST-THQ NORDIC </p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-APEXLEGENDS-2-1.jpg`}>
+                <img src={require('../../img/APEXLEGENDS-2-1.jpg')} alt="" />
+                <p className='mt-2'> APEXLEGENDS - RESPAWN ENTERTAINMENT </p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-APEXLEGENDS-1.jpg`}>
+                <img src={require('../../img/APEXLEGENDS-1.jpg')} alt="" />
+                <p className='mt-2'> APEXLEGENDS - RESPAWN ENTERTAINMENT </p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-GLASS-EGG-DIGITAL-MEDIA-2.jpg`}>
+                <img src={require('../../img/GLASS-EGG-DIGITAL-MEDIA-2.jpg')} alt="" />
+                <p className='mt-2'> GLASS EGG DIGITAL MEDIA </p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-GLASS-EGG-DIGITAL-MEDIA-3.jpg`}>
+                <img src={require('../../img/GLASS-EGG-DIGITAL-MEDIA-3.jpg')} alt="" />
+                <p className='mt-2'> GLASS EGG DIGITAL MEDIA </p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-GLASS-EGG-DIGITAL-MEDIA.jpg`}>
+                <img src={require('../../img/GLASS-EGG-DIGITAL-MEDIA.jpg')} alt="" />
+                <p className='mt-2'> GLASS EGG DIGITAL MEDIA </p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-GLASS-EGG-DIGITAL-MEDIA-4.jpg`}>
+                <img src={require('../../img/GLASS-EGG-DIGITAL-MEDIA-4.jpg')} alt="" />
+                <p className='mt-2'> GLASS EGG DIGITAL MEDIA </p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-FORZA-HORIZON4-XBOXGAMESTUDIOS.jpg`}>
+                <img src={require('../../img/FORZA-HORIZON4-XBOXGAMESTUDIOS.jpg')} alt="" />
+                <p className='mt-2'> FORZA HORIZON 4 - XBOX GAME STUDIOS </p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-FORZAMOTORSPORT7-XBOXGAMESTUDIOS.jpg`}>
+                <img src={require('../../img/FORZAMOTORSPORT7-XBOXGAMESTUDIOS.jpg')} alt="" />
+                <p className='mt-2'> FORZA MOTORSPORT 7 - XBOX GAME STUDIOS</p>
+            </SwiperSlide>
+        );
+
+        slides.push(
+            <SwiperSlide key={`slide-FORZAMOTORSPORT7-1-XBOXGAMESTUDIOS.jpg`}>
+                <img src={require('../../img/FORZAMOTORSPORT7-1-XBOXGAMESTUDIOS.jpg')} alt="" />
+                <p className='mt-2'> FORZA MOTORSPORT 7 - XBOX GAME STUDIOS </p>
             </SwiperSlide>
         );
         // }
@@ -76,10 +132,18 @@ export default function Banner() {
                     onSwiper={(swiper) => setSwipper(swiper)}
                 >
                     {buildSlide()}
-                    <div className="swiper-button-prev" onClick={() => swiper.slidePrev()}></div>
-                    <div className="swiper-button-next" onClick={() => swiper.slideNext()}></div>
-                </Swiper>
-            </div>
-        </div>
+                    <div className="swiper-button-prev" onClick={() => swiper.slidePrev()}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+                        </svg>
+                    </div>
+                    <div className="swiper-button-next" onClick={() => swiper.slideNext()}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                </Swiper >
+            </div >
+        </div >
     )
 }
