@@ -36,7 +36,7 @@ export default function Header() {
           <img className=' w-auto' style={{ height: offset == 0 ? '50px' : '40px' }} src={require("../../img/blue-2.png")} alt="logo" />
         </Link>
         <ul className="md:ml-auto md:mr-auto flex flex-wrap items-center text-md font-semibold justify-center">
-          <li><Link to="/" className="mr-8 hover:text-gray-900"> ABOUT </Link></li>
+          <li><Link to="/about" className="mr-8 hover:text-gray-900"> ABOUT </Link></li>
           <li><Link to="/service" className="mr-8 hover:text-gray-900"> SERVICE </Link></li>
           <li><Link to="/product" className="mr-8 hover:text-gray-900"> PORTFOLIO </Link></li>
           <li><Link to="/news" className="mr-8 hover:text-gray-900"> NEWS </Link></li>
@@ -82,19 +82,22 @@ export default function Header() {
         <h1 class="text-xl text-center font-bold pt-5">Menu</h1>
         <ul class="list-none text-white text-center">
           <li class="my-8">
-            <a href="#"></a>Teams
+            <a href="/about"></a> About
           </li>
           <li class="my-8">
-            <a href="#"></a>Projects
+            <a href="/service"></a> Services 
           </li>
           <li class="my-8">
-            <a href="#"></a>Favourites
+            <a href="/product"></a>Portfolio
           </li>
           <li class="my-8">
-            <a href="#"></a>Notifications
+            <a href="/news"></a>News
           </li>
           <li class="my-8">
-            <a href="#"></a>Members
+            <a href="/careers"></a>Careers
+          </li>
+          <li class="my-8">
+            <a href="/contact"></a>Contact
           </li>
         </ul>
       </nav>

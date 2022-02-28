@@ -6,13 +6,13 @@ export default function LastestNews() {
   function getPictures() {
     const rows = []
     const images = [
-      '../../img/News/new2.png',
-      '../../img/News/new3.png',
-      '../../img/News/new4.jpg',
+      '../img/News/new2.png',
+      '../img/News/new3.png',
+      '../img/News/new4.jpg',
       '../../img/News/new5.png',
-      '../../img/News/new6.png',
-      '../../img/News/new7.jpg',
-      '../../img/News/new8.png',
+      '../img/News/new6.png',
+      '../img/News/new7.jpg',
+      '../img/News/new8.png',
     ]
     for (const image of images) {
       const name = image.split('/')[image.split('/').length - 1]
