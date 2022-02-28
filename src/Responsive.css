@@ -1,0 +1,88 @@
+@media (min-width: 1440px) {
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1024px) {
+  .timeline-custom {
+    top: 80px;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 768px) {
+  .footer {
+    width: 100%;
+    display: block;
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 481px) {
+}
+
+@media (min-width: 425px) {
+  
+}
+
+@media (min-width: 375px) {
+  .timeline-custom {
+    top: 45px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 320px) {
+  .timeline-custom {
+    top: 45px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 1439px) {
+}
+@media (max-width: 1023px) {
+  .carouselAbout {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+  .box-intro {
+    width: 50%;
+    margin: 15px;
+    flex-direction: column;
+    box-align: center;
+  }
+}
+@media (max-width: 575px) {
+  .carouselService {
+    width: 750px;
+    top: 60px;
+  }
+  .introService {
+    width: 100%;
+    margin: 20px;
+  }
+  .bannerService {
+    width: 500px;
+    margin: 20px;
+  }
+  .pictureNews {
+    width: 260px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+}
+@media (max-width: 425px) {
+}
+@media (max-width: 374px) {
+}

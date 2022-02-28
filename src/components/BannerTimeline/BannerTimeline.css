@@ -1,6 +1,6 @@
 /* .works {
   /* background-image: url("../../img/glassegg-our-work.png"); */
-  /* background-size: cover;
+/* background-size: cover;
   background-repeat: no-repeat;
 } */
 
@@ -33,4 +33,18 @@
   display: inline-block;
   cursor: pointer;
   color: red;
+}
+
+.timeline-custom {
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.timeline-banner {
+  position: relative;
+  height: 500px;
 }
