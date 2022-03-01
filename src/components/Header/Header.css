@@ -13,6 +13,11 @@ header {
   box-shadow: 0px 0px 10px #cccccc;
   /* height: 109px; */
 }
+.active-header {
+  border-bottom: red 4px solid;
+  padding-bottom: 3px;
+  transition: all 200ms ease-in-out;
+}
 
 header.fix-header {
   position: fixed;

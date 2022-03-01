@@ -10,11 +10,11 @@ export default function MapContact() {
         </h1>
         <div
           className="bg-blue-400 justify-self-center rounded-lg mt-8"
-          style={{ width: "450px", height: "10px" }}
+          style={{ width: "240px", height: "8px" }}
         ></div>
       </div>
       <div className=" grid lg:grid-cols-2 sm:grid-cols-1 gap-2 px-20 py-10">
-        <div className="flex items-center sm:justify-start m-4 pl-16">
+        <div className="flex items-center lg:justify-start lg:m-4 lg:pl-16">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 text-blue-800"
@@ -34,7 +34,7 @@ export default function MapContact() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div className="flex items-center sm:justify-start m-4 pl-16">
+        <div className="flex items-center lg:justify-start lg:m-4 lg:pl-16">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 text-blue-800"
@@ -54,7 +54,7 @@ export default function MapContact() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div className="flex items-center sm:justify-start m-4 pl-16">
+        <div className="flex items-center lg:justify-start lg:m-4 lg:pl-16">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 text-blue-800"
@@ -74,7 +74,7 @@ export default function MapContact() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div className="flex items-center sm:justify-start m-4 pl-16">
+        <div className="flex items-center lg:justify-start lg:m-4 lg:pl-16">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 text-blue-800"

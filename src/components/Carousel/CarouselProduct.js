@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
-import ReactPlayer from "react-player";
 import "./CarouselProduct.css";
 export default function CarouselProduct() {
   const slider = useRef(null);
@@ -98,12 +97,11 @@ export default function CarouselProduct() {
     verticalSwiping: true,
     arrows: false,
     responsive: [
-      { breakpoint: 350, settings: { slidesToShow: 5 } },
-      { breakpoint: 500, settings: { slidesToShow: 5 } },
-      { breakpoint: 800, settings: { slidesToShow: 3 } },
+      { breakpoint: 350, settings: { slidesToShow: 2 } },
+      { breakpoint: 500, settings: { slidesToShow: 3 } },
+      { breakpoint: 800, settings: { slidesToShow: 4 } },
       { breakpoint: 1800, settings: { slidesToShow: 5 } },
-    ]
-
+    ],
 
     // afterChange: (currentSlide, nextSlide) => {
     //   setUpdateCount(updateCount + 1);
@@ -158,11 +156,10 @@ export default function CarouselProduct() {
     console.log("slideIndex", slideIndex);
     console.log("currentSlide", currentSlide);
     return (
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 sm:grid-cols-1">
         <div className=" flex justify-center items-center col-span-3 md:col-span-1 sm:col-span-1  p-10">
-
-          <div>  {currentSlide.name}</div>
-          <div className="border-solid border-black w-20 h-20 mr-5 ">
+          <div> {currentSlide.name}</div>
+          <div className="border-solid border-black  w-20 h-20 mr-5 ">
             <img
               className="bg-gray-300"
               src={require(`../../img${currentSlide.image}`)}
@@ -192,13 +189,11 @@ export default function CarouselProduct() {
           </div>
         </div>
         <div className="col-span-3 md:col-span-2 sm:col-span-3 flex justify-center py-10">
-
           <div
             className="p-6  bg-red-500"
             style={{ width: "70%", height: "400px" }}
           >
-
-            <div>  {currentSlide.name}</div>
+            <div> {currentSlide.name}</div>
           </div>
         </div>
       </div>
@@ -245,18 +240,11 @@ export default function CarouselProduct() {
             zIndex: "5",
           }}
         >
-          <Slider
-            ref={slider}
-            {...settings}
-            className=""
-
-          >
+          <Slider ref={slider} {...settings} className="">
             {getSlides()}
           </Slider>
         </div>
-
       </div>
-
 
       {handleChangeSkill()}
     </div>

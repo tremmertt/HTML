@@ -9,7 +9,7 @@ export default function Careers() {
     <div className="container-fluid xl:w-full xl:h-full ">
       <CarouselCareers />
       <CardCareers />
-      {/* <TableCareer /> */}
+      <TableCareer />
     </div>
   );
 }

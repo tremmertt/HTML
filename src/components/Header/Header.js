@@ -3,15 +3,44 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useState } from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
-export default function Header() {
+/**
+ * Function converts path like /user/123 to /user/:id
+ */
+const getRoutePath = (location, params) => {
+  const { pathname } = location;
+
+  if (!Object.keys(params).length) {
+    return pathname; // we don't need to replace anything
+  }
+
+  let path = pathname;
+  Object.entries(params).forEach(([paramName, paramValue]) => {
+    if (paramValue) {
+      path = path.replace(paramValue, `:${paramName}`);
+    }
+  });
+  return path;
+};
+
+export default function Header(props) {
   const [offset, setOffset] = useState(window.pageYOffset);
   const [curWidth, setCurrentWidth] = useState(window.innerWidth);
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+  const location = useLocation();
+  const params = useParams();
+  const path = getRoutePath(location, params);
+  console.log("path", path);
 
   function isLargeScreen() {
     return curWidth <= 1000 ? false : true;
+  }
+
+  function scrollToTop() {
+    props.scrollToTop(10);
+    setIsOpenDrawer(false);
   }
 
   useEffect(() => {
@@ -40,8 +69,9 @@ export default function Header() {
         }}
         className="px-14  flex flex-row items-center shadow-md justify-around"
       >
-        <Link
+        <NavLink
           to="/"
+          onClick={scrollToTop}
           className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
         >
           <img
@@ -50,43 +80,85 @@ export default function Header() {
             src={require("../../img/blue-2.png")}
             alt="logo"
           />
-        </Link>
+        </NavLink>
         <ul className="md:ml-auto md:mr-auto flex flex-wrap items-center text-md font-semibold justify-center">
-          <li>
-            <Link to="/about" className="mr-8 hover:text-gray-900">
+          <li onClick={scrollToTop}>
+            <NavLink
+              to="/about"
+              className={
+                path == "/about"
+                  ? "active-header mr-8 hover:text-gray-900"
+                  : "mr-8 hover:text-gray-900"
+              }
+            >
               {" "}
               ABOUT{" "}
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link to="/service" className="mr-8 hover:text-gray-900">
+          <li onClick={scrollToTop}>
+            <NavLink
+              to="/service"
+              className={
+                path == "/service"
+                  ? "active-header mr-8 hover:text-gray-900"
+                  : "mr-8 hover:text-gray-900"
+              }
+            >
               {" "}
               SERVICE{" "}
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link to="/product" className="mr-8 hover:text-gray-900">
+          <li onClick={scrollToTop}>
+            <NavLink
+              to="/product"
+              className={
+                path == "/product"
+                  ? "active-header mr-8 hover:text-gray-900"
+                  : "mr-8 hover:text-gray-900"
+              }
+            >
               {" "}
               PORTFOLIO{" "}
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link to="/news" className="mr-8 hover:text-gray-900">
+          <li onClick={scrollToTop}>
+            <NavLink
+              to="/news"
+              className={
+                path == "/news"
+                  ? "active-header mr-8 hover:text-gray-900"
+                  : "mr-8 hover:text-gray-900"
+              }
+            >
               {" "}
               NEWS{" "}
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link to="/careers" className="mr-8 hover:text-gray-900">
+          <li onClick={scrollToTop}>
+            <NavLink
+              to="/careers"
+              className={
+                path == "/careers"
+                  ? "active-header mr-8 hover:text-gray-900"
+                  : "mr-8 hover:text-gray-900"
+              }
+            >
               {" "}
               CAREERS{" "}
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link to="/contact" className="mr-8 hover:text-gray-900">
+          <li onClick={scrollToTop}>
+            <NavLink
+              to="/contact"
+              className={
+                path == "/contact"
+                  ? "active-header mr-8 hover:text-gray-900"
+                  : "mr-8 hover:text-gray-900"
+              }
+            >
               {" "}
               CONTACT{" "}
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <button className="inline-flex items-center outline outline-offset-2 outline-1 outline-blue-400 border-0 py-1 px-3 focus:outline-none hover:outline-blue-900 hover:outline-2 rounded text-base  ">
@@ -175,25 +247,46 @@ export default function Header() {
 
         <ul className="list-none text-white text-center">
           <li className="my-8">
-            <Link to="/"> Home </Link>
+            <Link onClick={scrollToTop} to="/">
+              {" "}
+              Home{" "}
+            </Link>
           </li>
           <li className="my-8">
-            <Link to="/about"> About </Link>
+            <Link onClick={scrollToTop} to="/about">
+              {" "}
+              About{" "}
+            </Link>
           </li>
           <li className="my-8">
-            <Link to="/service"> Service </Link>
+            <Link onClick={scrollToTop} to="/service">
+              {" "}
+              Service{" "}
+            </Link>
           </li>
           <li className="my-8">
-            <Link to="/product"> Portfolio </Link>
+            <Link onClick={scrollToTop} to="/product">
+              {" "}
+              Portfolio{" "}
+            </Link>
           </li>
           <li className="my-8">
-            <Link to="/news"> News </Link>
+            <Link onClick={scrollToTop} to="/news">
+              {" "}
+              News{" "}
+            </Link>
           </li>
           <li className="my-8">
-            <Link to="/careers"> Careers </Link>
+            <Link onClick={scrollToTop} to="/careers">
+              {" "}
+              Careers{" "}
+            </Link>
           </li>
           <li className="my-8">
-            <Link to="/contact"> Contact </Link>
+            <Link onClick={scrollToTop} to="/contact">
+              {" "}
+              Contact{" "}
+            </Link>
           </li>
         </ul>
       </nav>
