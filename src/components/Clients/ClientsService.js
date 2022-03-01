@@ -45,7 +45,7 @@ export default function ClientsService() {
     for (const flagPath of flags) {
       const name = flagPath
         .split("/")
-        [flagPath.split("/").length - 1].replace(".png", "");
+      [flagPath.split("/").length - 1].replace(".png", "");
       rows.push(
         <li className="col-span-1 text-left py-3 pl-4" key={`${name}`}>
           <img

@@ -154,34 +154,45 @@ export default function CarouselProduct() {
   function handleChangeSkill() {
     const currentSlide = slides[slideIndex];
     return (
-      <div className=" flex justify-center items-center col-span-3 md:col-span-1 sm:col-span-1  p-10">
-        <div className="border-solid border-black  w-20 h-20 mr-5 ">
-          <img
-            className="bg-gray-300"
-            src={require(`../../img${currentSlide.image}`)}
-            alt=""
-          />
+      <div className="grid grid-cols-3 sm:grid-cols-1">
+        <div className=" flex justify-center items-center col-span-3 md:col-span-1 sm:col-span-1  p-10">
+          <div> {currentSlide.name}</div>
+          <div className="border-solid border-black  w-20 h-20 mr-5 ">
+            <img
+              className="bg-gray-300"
+              src={require(`../../img${currentSlide.image}`)}
+              alt=""
+            />
+          </div>
+          <div className="border-solid border-black w-20 h-20 mr-5">
+            <img
+              className="bg-gray-300"
+              src={require("../../img/product/Astra_Ability_Icons_E_Nebulav2.png")}
+              alt=""
+            />
+          </div>
+          <div className="border-solid border-black w-20 h-20 mr-5">
+            <img
+              className="bg-gray-300"
+              src={require("../../img/product/Astra_Ability_Icons_C_GravityWellv2.png")}
+              alt=""
+            />
+          </div>
+          <div className="border-solid border-black w-20 h-20">
+            <img
+              className="bg-gray-300"
+              src={require("../../img/product/Astra_Ability_Icons_X_CosmicDividev2.png")}
+              alt=""
+            />
+          </div>
         </div>
-        <div className="border-solid border-black w-20 h-20 mr-5">
-          <img
-            className="bg-gray-300"
-            src={require("../../img/product/Astra_Ability_Icons_E_Nebulav2.png")}
-            alt=""
-          />
-        </div>
-        <div className="border-solid border-black w-20 h-20 mr-5">
-          <img
-            className="bg-gray-300"
-            src={require("../../img/product/Astra_Ability_Icons_C_GravityWellv2.png")}
-            alt=""
-          />
-        </div>
-        <div className="border-solid border-black w-20 h-20">
-          <img
-            className="bg-gray-300"
-            src={require("../../img/product/Astra_Ability_Icons_X_CosmicDividev2.png")}
-            alt=""
-          />
+        <div className="col-span-3 md:col-span-2 sm:col-span-3 flex justify-center py-10">
+          <div
+            className="p-6  bg-red-500"
+            style={{ width: "70%", height: "400px" }}
+          >
+            <div> {currentSlide.name}</div>
+          </div>
         </div>
       </div>
     );
@@ -199,6 +210,7 @@ export default function CarouselProduct() {
   }
   function handleClick(slide) {
     const index = slides.findIndex((i) => i.id === slide.id);
+    console.log(slider, index);
     // slider go to curent index
     slider.current.slickGoTo(index);
 
@@ -219,6 +231,12 @@ export default function CarouselProduct() {
           width: "100vw",
         }}
       >
+        {/* <img
+        className="mt-14 w-screen sm:w-screen bg-repeat h-fit"
+        src={require("../../img/agents-background.jpg")}
+        alt=""
+         
+      /> */}
         <div
           className="text-white w-screen"
           style={{
@@ -236,21 +254,7 @@ export default function CarouselProduct() {
         </div>
       </div>
 
-      <div
-        className="p-12 bg-transparent grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3"
-        style={{ zIndex: "10" }}
-      >
-        <div className="col-span-3 sm:col-span-2 md:col-span-1">
-          <h2 className="text-3xl sm:text-lg font-extrabold font-serif text-left p-3 ">
-            {" "}
-            KỸ NĂNG ĐẶC BIỆT{" "}
-          </h2>
-          {handleChangeSkill()}
-        </div>
-        <div className="md:cols-span-2 sm:col-span-2 col-span-3 p-14">
-          {handleChangeVideo()}
-        </div>
-      </div>
+      {handleChangeSkill()}
     </div>
   );
 }

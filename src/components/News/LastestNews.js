@@ -21,7 +21,7 @@ export default function LastestNews() {
       rows.push(
         <div className="text-left col-span-1 py-3" key={name}>
           <div
-            className=" shadow-xl rounded"
+            className=" shadow-xl rounded-lg"
             style={{
               width: "260px",
               height: "180px",

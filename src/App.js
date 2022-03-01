@@ -73,16 +73,15 @@ function App() {
         </button>
       )}
       <Router>
-        <Header className="w-screen" />
+        <Header className="w-screen" scrollToTop={scrollToTop} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/detail" element={<DetailCareer />} />
+          <Route path="/" element={<Home />} animate={true} />
+          <Route path="/about" element={<About />} animate={true} />
+          <Route path="/service" element={<Service />} animate={true} />
+          <Route path="/product" element={<Product />} animate={true} />
+          <Route path="/news" element={<News />} animate={true} />
+          <Route path="/careers" element={<Careers />} animate={true} />
+          <Route path="/contact" element={<Contact />} animate={true} />
         </Routes>
         <Footer />
       </Router>

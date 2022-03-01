@@ -1,5 +1,6 @@
 import React from "react";
 import "./Intro.css";
+import CountUp from 'react-countup';
 
 export default function Intro() {
   return (
@@ -43,7 +44,7 @@ export default function Intro() {
             />
           </svg>
           <div className="intro">
-            <h3 className="text-blue-700 text-6xl font-extrabold"> 400+ </h3>
+            <h3 className="text-blue-700 text-5xl font-extrabold"> <CountUp end={8880}></CountUp>+ </h3>
             <p className="text-xl text-black font-semibold"> MEMBERS </p>
           </div>
         </div>
