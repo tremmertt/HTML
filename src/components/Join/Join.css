@@ -1,5 +1,10 @@
 .join {
-    background-image: url('../../img/glassegg-get-in-touch.png') ;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("../../img/glassegg-get-in-touch.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 481px) {
+  width: "100%";
+  margin: 10px;
 }
