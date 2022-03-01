@@ -45,7 +45,10 @@ function App() {
   }
 
   return (
-    <div className="App container-fluid w-screen">
+    <div
+      className="App container-fluid w-screen"
+      style={{ overflowX: "hidden" }}
+    >
       {" "}
       {offset == 0 ? (
         <div></div>
@@ -81,6 +84,7 @@ function App() {
           <Route path="/product" element={<Product />} animate={true} />
           <Route path="/news" element={<News />} animate={true} />
           <Route path="/careers" element={<Careers />} animate={true} />
+          <Route path="/detail" element={<DetailCareer />} />
           <Route path="/contact" element={<Contact />} animate={true} />
         </Routes>
         <Footer />
