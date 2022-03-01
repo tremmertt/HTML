@@ -1,7 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "./Responsive.css";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Service from "./pages/Service/Service";
 
@@ -14,6 +20,8 @@ import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
 import { useEffect, useState } from "react";
 import DetailCareer from "./components/TableCareer/DetailCareer";
+import { createBrowserHistory } from "history";
+
 function App() {
   const [offset, setOffset] = useState(window.pageYOffset);
 

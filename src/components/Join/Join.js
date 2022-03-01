@@ -14,7 +14,7 @@ export default function Join() {
           style={{ width: "300px", height: "10px" }}
         ></div>
       </div>
-      <div className="grid lg:grid-cols-12 md:grid-cols-2 my-10 w-full">
+      <div className="grid lg:grid-cols-12 md:grid-cols-2 my-10 ">
         <div className="lg:col-span-6 md:col-span-2 sm:col-span-2 border-r-2 border-gray-500 ml-6 mt-4">
           <p className="text-lg font-sans font-light flex justify-start ">
             {" "}

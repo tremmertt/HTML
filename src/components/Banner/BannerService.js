@@ -26,7 +26,7 @@ export default function BannerService() {
           culpa qui officia deserunt mollit anim id est laborum.{" "}
         </p>
       </div>
-      <div className=" mt-10 px-2 mx-20 grid md:grid-cols-10 sm:grid-cols-3 grid-cols-2">
+      <div className=" mt-10 px-2 mx-20 grid md:grid-cols-10  sm:grid-cols-2">
         <div className="md:col-span-2 sm:col-span-1 col-span-1 ">
           <img
             className="mx-auto w-1/2"

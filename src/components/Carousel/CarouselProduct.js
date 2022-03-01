@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
-import ReactPlayer from "react-player";
 import "./CarouselProduct.css";
 export default function CarouselProduct() {
   const slider = useRef(null);
@@ -97,11 +96,10 @@ export default function CarouselProduct() {
     vertical: true,
     verticalSwiping: true,
     arrows: false,
-    variableWidth: true,
     responsive: [
-      { breakpoint: 350, settings: { slidesToShow: 5 } },
-      { breakpoint: 500, settings: { slidesToShow: 5 } },
-      { breakpoint: 800, settings: { slidesToShow: 3 } },
+      { breakpoint: 350, settings: { slidesToShow: 2 } },
+      { breakpoint: 500, settings: { slidesToShow: 3 } },
+      { breakpoint: 800, settings: { slidesToShow: 4 } },
       { breakpoint: 1800, settings: { slidesToShow: 5 } },
     ],
 
@@ -155,58 +153,52 @@ export default function CarouselProduct() {
 
   function handleChangeSkill() {
     const currentSlide = slides[slideIndex];
-    console.log("slideIndex", slideIndex);
-    console.log("currentSlide", currentSlide);
     return (
-      <div className="grid grid-cols-3">
-        <div className=" flex justify-center items-center col-span-3 md:col-span-1 sm:col-span-1 p-10">
-          <div> {currentSlide.name} </div>
-          <div className="border-solid border-black w-20 h-20 mr-5 ">
-            <img
-              className="bg-gray-300"
-              src={require(`../../img${currentSlide.image}`)}
-              alt=""
-            />
-          </div>
-          <div className="border-solid border-black w-20 h-20 mr-5">
-            <img
-              className="bg-gray-300"
-              src={require("../../img/product/Astra_Ability_Icons_E_Nebulav2.png")}
-              alt=""
-            />
-          </div>
-          <div className="border-solid border-black w-20 h-20 mr-5">
-            <img
-              className="bg-gray-300"
-              src={require("../../img/product/Astra_Ability_Icons_C_GravityWellv2.png")}
-              alt=""
-            />
-          </div>
-          <div className="border-solid border-black w-20 h-20">
-            <img
-              className="bg-gray-300"
-              src={require("../../img/product/Astra_Ability_Icons_X_CosmicDividev2.png")}
-              alt=""
-            />
-          </div>
+      <div className=" flex justify-center items-center col-span-3 md:col-span-1 sm:col-span-1  p-10">
+        <div className="border-solid border-black  w-20 h-20 mr-5 ">
+          <img
+            className="bg-gray-300"
+            src={require(`../../img${currentSlide.image}`)}
+            alt=""
+          />
         </div>
-
-        <div className="col-span-2 sm:col-span-1 flex justify-center py-10">
-          <div
-            className="p-6 bg-red-500"
-            style={{ width: "70%", height: "400px" }}
-          >
-            {" "}
-            <div>{currentSlide.name}</div>{" "}
-          </div>
+        <div className="border-solid border-black w-20 h-20 mr-5">
+          <img
+            className="bg-gray-300"
+            src={require("../../img/product/Astra_Ability_Icons_E_Nebulav2.png")}
+            alt=""
+          />
+        </div>
+        <div className="border-solid border-black w-20 h-20 mr-5">
+          <img
+            className="bg-gray-300"
+            src={require("../../img/product/Astra_Ability_Icons_C_GravityWellv2.png")}
+            alt=""
+          />
+        </div>
+        <div className="border-solid border-black w-20 h-20">
+          <img
+            className="bg-gray-300"
+            src={require("../../img/product/Astra_Ability_Icons_X_CosmicDividev2.png")}
+            alt=""
+          />
         </div>
       </div>
     );
   }
-
+  function handleChangeVideo() {
+    const currentSlide = slides[slideIndex];
+    return (
+      <div
+        className="p-6 px-auto  bg-red-500"
+        style={{ width: "", height: "400px" }}
+      >
+        <div> {currentSlide.name}</div>
+      </div>
+    );
+  }
   function handleClick(slide) {
     const index = slides.findIndex((i) => i.id === slide.id);
-    console.log(this.slider);
     // slider go to curent index
     slider.current.slickGoTo(index);
 
@@ -216,56 +208,49 @@ export default function CarouselProduct() {
   console.log("omdex", slideIndex);
 
   return (
-    <div
-      className="relative w-screen p-0 m-0"
-      style={{
-        backgroundImage: `url(${"/img/background/agents-background.jpg"})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        height: "700px",
-        width: "100vw",
-      }}
-    >
-      {/* <img
-        className="mt-14 w-screen sm:w-screen bg-repeat h-fit"
-        src={require("../../img/agents-background.jpg")}
-        alt=""
-         
-      /> */}
+    <div>
       <div
-        className="text-white h-2/3 w-screen"
+        className="relative w-screen p-0 m-0"
         style={{
-          position: "absolute",
-          paddingLeft: "15%",
-          left: "0%",
-          top: "0",
-          bottom: "0",
-          zIndex: "5",
+          backgroundImage: `url(${"/img/background/agents-background.jpg"})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          height: "700px",
+          width: "100vw",
         }}
       >
-        <Slider
-          ref={slider}
-          {...settings}
-          className=""
+        <div
+          className="text-white w-screen"
           style={{
-            height: "200px",
-            width: "100%",
+            position: "absolute",
+            paddingLeft: "15%",
+            left: "0%",
+            top: "0",
+            bottom: "0",
+            zIndex: "5",
           }}
         >
-          {getSlides()}
-        </Slider>
+          <Slider ref={slider} {...settings} className="">
+            {getSlides()}
+          </Slider>
+        </div>
       </div>
-      {/* {handleChangeSkill()} */}
-      {/* <div
-        className="px-52 bg-transparent  grid grid-cols-4 sm:grid-cols-2"
+
+      <div
+        className="p-12 bg-transparent grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3"
         style={{ zIndex: "10" }}
       >
-        <h2 className="text-3xl sm:text-lg font-extrabold ml-20 sm:ml-4 font-serif text-left mt-10">
-          {" "}
-          KỸ NĂNG ĐẶC BIỆT{" "}
-        </h2>
-        <div className="sm:col-span-1 col-span-1">{handleChangeSkill()}</div>
-      </div> */}
+        <div className="col-span-3 sm:col-span-2 md:col-span-1">
+          <h2 className="text-3xl sm:text-lg font-extrabold font-serif text-left p-3 ">
+            {" "}
+            KỸ NĂNG ĐẶC BIỆT{" "}
+          </h2>
+          {handleChangeSkill()}
+        </div>
+        <div className="md:cols-span-2 sm:col-span-2 col-span-3 p-14">
+          {handleChangeVideo()}
+        </div>
+      </div>
     </div>
   );
 }

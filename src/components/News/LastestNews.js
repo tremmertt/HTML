@@ -23,7 +23,7 @@ export default function LastestNews() {
           <div
             className=" shadow-xl rounded"
             style={{
-              width: "350px",
+              width: "260px",
               height: "180px",
               backgroundImage: `url(${image})`,
               backgroundSize: "cover",
@@ -50,17 +50,17 @@ export default function LastestNews() {
         </h1>
         <div
           className="bg-blue-400 justify-self-center rounded-lg mt-8  "
-          style={{ width: "300px", height: "100px" }}
+          style={{ width: "300px", height: "8px" }}
         ></div>
       </div>
 
       <div className="px-2 md:px-24 sm:px-6 m-10 grid grid-cols-2">
-        <div className="col-start-1 col-span-2 md:col-span-2 grid grid-cols-2">
+        <div className="col-start-1 col-span-2 md:col-span-2 grid grid-cols-2 sm:grid-cols-1 sm:col-span-1">
           <div
             className=" rounded-lg shadow-2xl cols-span-2 md:cols-span-1 sm:cols-span-2"
             style={{
               width: "100%",
-              height: "500px",
+              height: "350px",
               backgroundImage: `url(${"../../img/News/new1.png"})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -72,7 +72,7 @@ export default function LastestNews() {
             <p className="text-sm"> pitest 5</p>
           </div>
         </div>
-        <div className="col-span-2 grid grid-cols-1 xl:grid-cols-3 mt-10 md:grid-cols-2 sm:grid-cols-1">
+        <div className="col-span-2 grid xl:grid-cols-3 mt-10 md:grid-cols-2 sm:grid-cols-1">
           {getPictures()}
         </div>
       </div>

@@ -138,7 +138,7 @@ export default function Header() {
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -164,35 +164,35 @@ export default function Header() {
             : "navbar-close navbar w-64 absolute overflow-x-scroll bg-gray-700 top-0 h-screen"
         }
       >
-        <div class="flex pr-2 justify-end">
+        <div className="flex pr-2 justify-end">
           <button
             onClick={() => setIsOpenDrawer(false)}
-            class="p-2 text-white text-xl font-bold"
+            className="p-2 text-white text-xl font-bold"
           >
             &#9747;
           </button>
         </div>
 
-        <ul class="list-none text-white text-center">
-          <li class="my-8">
+        <ul className="list-none text-white text-center">
+          <li className="my-8">
             <Link to="/"> Home </Link>
           </li>
-          <li class="my-8">
+          <li className="my-8">
             <Link to="/about"> About </Link>
           </li>
-          <li class="my-8">
+          <li className="my-8">
             <Link to="/service"> Service </Link>
           </li>
-          <li class="my-8">
+          <li className="my-8">
             <Link to="/product"> Portfolio </Link>
           </li>
-          <li class="my-8">
+          <li className="my-8">
             <Link to="/news"> News </Link>
           </li>
-          <li class="my-8">
+          <li className="my-8">
             <Link to="/careers"> Careers </Link>
           </li>
-          <li class="my-8">
+          <li className="my-8">
             <Link to="/contact"> Contact </Link>
           </li>
         </ul>
@@ -204,7 +204,7 @@ export default function Header() {
     <header
       className={
         offset == 0
-          ? "header text-gray-600 body-font fix-header"
+          ? "header text-gray-600 body-font "
           : "header fix-header text-gray-600 body-font fix-header"
       }
     >
