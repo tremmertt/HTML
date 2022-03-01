@@ -1,0 +1,4 @@
+.slide-custom:hover {
+  color: red !important;
+  cursor: "url('/img/laptop-screen.png') 4 4 !important";
+}

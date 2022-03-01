@@ -1,0 +1,29 @@
+.videobcg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+  -webkit-filter: blur(125px);
+  -moz-filter: blur(125px);
+  -o-filter: blur(125px);
+  -ms-filter: blur(125px);
+  filter: blur(125px);
+}
+
+.player-wrapper {
+  width: auto;
+  height: auto;
+}
+.react-player {
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.react-player > div {
+  position: absolute;
+}

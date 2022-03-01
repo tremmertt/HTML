@@ -11,12 +11,18 @@
   justify-content: center;
   border-radius: 15px;
   padding: 10%;
-  box-shadow: 5px 1px 12px 0px #00000030 ;
+  box-shadow: 5px 1px 12px 0px #00000030;
 }
 .avatar-team {
   display: block;
   width: 100%;
   height: auto;
-  
+
   transform: rotate(-45deg);
+}
+
+.about-team-custom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center !important;
 }
