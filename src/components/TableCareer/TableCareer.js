@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function TableCareer() {
   function buildTable() {
@@ -17,9 +18,12 @@ export default function TableCareer() {
                 />
               </div> */}
               <div className="ml-4">
-                <div className="text-sm font-medium text-gray-900">
+                <Link
+                  to="/detail"
+                  className="text-sm font-medium text-gray-900 hover:text-red-600 hover:underline hover:underline-offset-2"
+                >
                   Jane Cooper
-                </div>
+                </Link>
                 <div className="text-sm text-gray-500">
                   jane.cooper@example.com
                 </div>

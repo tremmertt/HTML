@@ -92,12 +92,18 @@ export default function CarouselProduct() {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,
     arrows: false,
     variableWidth: true,
+    responsive: [
+      { breakpoint: 350, settings: { slidesToShow: 5 } },
+      { breakpoint: 500, settings: { slidesToShow: 5 } },
+      { breakpoint: 800, settings: { slidesToShow: 3 } },
+      { breakpoint: 1800, settings: { slidesToShow: 5 } },
+    ],
 
     // afterChange: (currentSlide, nextSlide) => {
     //   setUpdateCount(updateCount + 1);
@@ -119,8 +125,9 @@ export default function CarouselProduct() {
       rows.push(
         <div
           onClick={() => handleClick(slide)}
-          className="text-6xl  my-10 font-semibold"
+          className="text-6xl  my-10 font-semibold slide-custom"
           style={{ width: "60%" }}
+          key={index}
         >
           <h3
             className={
@@ -151,9 +158,9 @@ export default function CarouselProduct() {
     console.log("slideIndex", slideIndex);
     console.log("currentSlide", currentSlide);
     return (
-      <div className="grid grid-cols-4 sm:grid-cols-1 slide-custom">
-        <div className=" flex justify-start col-span-2 sm:col-span-1 ml-20 mt-10 px-28">
-          {currentSlide.name}
+      <div className="grid grid-cols-3">
+        <div className=" flex justify-center items-center col-span-3 md:col-span-1 sm:col-span-1 p-10">
+          <div> {currentSlide.name} </div>
           <div className="border-solid border-black w-20 h-20 mr-5 ">
             <img
               className="bg-gray-300"
@@ -185,11 +192,13 @@ export default function CarouselProduct() {
         </div>
 
         <div className="col-span-2 sm:col-span-1 flex justify-center py-10">
-          {currentSlide.name}
           <div
-            className="p-6 mt-8 bg-red-500 w-72 h-60"
-            style={{ width: "400px", height: "400px" }}
-          ></div>
+            className="p-6 bg-red-500"
+            style={{ width: "70%", height: "400px" }}
+          >
+            {" "}
+            <div>{currentSlide.name}</div>{" "}
+          </div>
         </div>
       </div>
     );
@@ -197,9 +206,9 @@ export default function CarouselProduct() {
 
   function handleClick(slide) {
     const index = slides.findIndex((i) => i.id === slide.id);
-    // console.log(this.slider);
+    console.log(this.slider);
     // slider go to curent index
-    slider.current.slickGoTo(index - 2);
+    slider.current.slickGoTo(index);
 
     // set state for slide index which slide is chosen
     setSlideIndex(index);
@@ -211,7 +220,7 @@ export default function CarouselProduct() {
       className="relative w-screen p-0 m-0"
       style={{
         backgroundImage: `url(${"/img/background/agents-background.jpg"})`,
-        backgroundSize: "auto",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         height: "700px",
         width: "100vw",
@@ -242,27 +251,11 @@ export default function CarouselProduct() {
             height: "200px",
             width: "100%",
           }}
-          breakpoints={{
-            // when window width is >= 320px
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            // when window width is >= 480px
-            480: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            // when window width is >= 640px
-            640: {
-              slidesPerView: 6,
-              spaceBetween: 40,
-            },
-          }}
         >
           {getSlides()}
         </Slider>
       </div>
+      {/* {handleChangeSkill()} */}
       {/* <div
         className="px-52 bg-transparent  grid grid-cols-4 sm:grid-cols-2"
         style={{ zIndex: "10" }}

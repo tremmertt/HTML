@@ -13,6 +13,7 @@ import Careers from "./pages/Hiring/Careers";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
 import { useEffect, useState } from "react";
+import DetailCareer from "./components/TableCareer/DetailCareer";
 function App() {
   const [offset, setOffset] = useState(window.pageYOffset);
 
@@ -73,6 +74,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/detail" element={<DetailCareer />} />
         </Routes>
         <Footer />
       </Router>

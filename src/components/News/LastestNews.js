@@ -19,10 +19,9 @@ export default function LastestNews() {
       const name = image.split("/")[image.split("/").length - 1];
       console.log("image", image);
       rows.push(
-        <div className="text-left p-5">
+        <div className="text-left col-span-1 py-3" key={name}>
           <div
-            key={name}
-            className="col-span-1 shadow-xl rounded"
+            className=" shadow-xl rounded"
             style={{
               width: "350px",
               height: "180px",
@@ -32,7 +31,7 @@ export default function LastestNews() {
             }}
           ></div>
 
-          <p className="mt-2">
+          <p className="py-4">
             FEB 23, 2022 <a href="#">Go to</a>
           </p>
           <h1 className="text-2xl">Pi test 2</h1>
@@ -50,24 +49,30 @@ export default function LastestNews() {
           LATEST NEWS{" "}
         </h1>
         <div
-          className="bg-blue-400 justify-self-center rounded-lg mt-8"
-          style={{ width: "300px", height: "10px" }}
+          className="bg-blue-400 justify-self-center rounded-lg mt-8  "
+          style={{ width: "300px", height: "100px" }}
         ></div>
       </div>
 
-      <div className="px-24 m-10 grid grid-cols-3 sm:grid-cols-1">
-        <div
-          className="pictureNews rounded-lg shadow-2xl md:col-span-2 sm:col-span-1 flex justify-items-center sm:justify-items-start"
-          style={{ width: "300px" }}
-        >
-          <img src={require("../../img/News/new1.png")} alt="" />
+      <div className="px-2 md:px-24 sm:px-6 m-10 grid grid-cols-2">
+        <div className="col-start-1 col-span-2 md:col-span-2 grid grid-cols-2">
+          <div
+            className=" rounded-lg shadow-2xl cols-span-2 md:cols-span-1 sm:cols-span-2"
+            style={{
+              width: "100%",
+              height: "500px",
+              backgroundImage: `url(${"../../img/News/new1.png"})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div className="cols-span-2 md:cols-span-2 sm:cols-span-2  text-left ml-3 mt-4 leading-loose">
+            <h1 className="text-xl"> FEB 23, 2022</h1>
+            <p className="text-lg"> pitest 5 </p>
+            <p className="text-sm"> pitest 5</p>
+          </div>
         </div>
-        <div className="col-span-3 sm:col-span-2 text-left ml-3 leading-loose">
-          <h1 className="text-xl"> FEB 23, 2022</h1>
-          <p className="text-lg"> pitest 5 </p>
-          <p className="text-sm"> pitest 5</p>
-        </div>
-        <div className="col-span-3 sm:col-span-1 grid lg:grid-cols-3 sm:grid-cols-1 mt-10">
+        <div className="col-span-2 grid grid-cols-1 xl:grid-cols-3 mt-10 md:grid-cols-2 sm:grid-cols-1">
           {getPictures()}
         </div>
       </div>
